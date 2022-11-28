@@ -15,10 +15,14 @@
 {/each}
 
 <script>
-    import { element } from "svelte/internal";
+    import { element, onMount } from "svelte/internal";
 
-
-    let todoList = []
+    let todoList = [];
+    
+    onMount(()=>{
+        window.localStorage.getItem(JSON.parse('list'));
+    });
+    
     let inputText = '';
 
     function appendToList() {
@@ -28,8 +32,9 @@
         id: Math.random(),
         inputText,
         done: false
-      }
+      } 
     ];
+    window.localStorage.setItem('list', JSON.stringify(todoList));
     inputText = '';
 
 }
@@ -55,24 +60,25 @@ function toggle(element){
 
 h1{
     text-align: center;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
     margin-top: 3%;
-    font-size: 500;
+    font-size: 36px;
 }
 
+
 input[type='text']{
-    height:40px;
-    width:450px;
+    height:30px;
+    width:50%;
+    max-width: 450px;
     align-items: center;
     display: block;
+    margin:auto;
     margin-bottom: 10px;
+    border: solid 3px black;
     border-radius: 20px;
     text-align: center;
     font-size: 125%;
-    position: relative;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%,-50%);
+    
     
 }
 
@@ -105,11 +111,22 @@ input[type='checkbox']:hover{
     min-width: 200px;
     border-radius: 10px;
     cursor: pointer;
+    transition: .3s all; /* Partiall Credit: Nemo Eriksson */
+    animation: .7s spawn;
+}
+
+@keyframes spawn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .listElements:hover{
     box-shadow: 0 0 5px grey;
-    transform: scale(1.008);
+    scale: 1.008;
 }
 
 button{
@@ -125,11 +142,12 @@ button{
 }
 
 button:hover{
-    transform: scale(1.4);
+    scale: 1.4;
 }
 
-.done{
+.done span, .done input{
     opacity: 0.5;
 }
+
 
 </style>
