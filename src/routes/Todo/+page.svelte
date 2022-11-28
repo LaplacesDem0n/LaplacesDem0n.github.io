@@ -16,8 +16,8 @@
 <script>
     import { element, onMount } from "svelte/internal";
 
-    let todoList = [];
-    
+    let todoList = JSON.parse(localStorage.getItem('list'));
+
     let inputText = '';
 
     function appendToList() {
@@ -30,12 +30,17 @@
       } 
     ];
 
+    localStorage.setItem('list', JSON.stringify(todoList));
+
     inputText = '';
+
+    
 
 }
 
 function remove(element){
     todoList= todoList.filter((e)=>e.id!=element.id)
+    localStorage.setItem('list', JSON.stringify(todoList));
 
 }
 
