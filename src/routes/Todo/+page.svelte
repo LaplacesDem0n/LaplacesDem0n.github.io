@@ -14,7 +14,8 @@
 {/each}
 
 <script>
-    import { element, onMount } from "svelte/internal";
+
+    
 
     let todoList = JSON.parse(localStorage.getItem('list'));
 
@@ -33,7 +34,6 @@
     localStorage.setItem('list', JSON.stringify(todoList));
 
     inputText = '';
-
     
 
 }
@@ -44,11 +44,9 @@ function remove(element){
 
 }
 
-function toggle(element){
-    element.done = !element.done;
-    todoList = todoList;
-  };
-
+onbeforeunload = function(){
+    localStorage.setItem('list', JSON.stringify(todoList));
+}
 </script>
 
 <style>
@@ -73,7 +71,7 @@ input[type='text']{
     align-items: center;
     display: block;
     margin:auto;
-    margin-bottom: 10px;
+    margin-bottom: 1%;
     border: solid 3px black;
     border-radius: 20px;
     text-align: center;
@@ -108,7 +106,9 @@ input[type='checkbox']:hover{
     border: solid;
     height: 20px;
     width: fit-content;
-    min-width: 200px;
+    height: fit-content;
+    max-width: 95%;
+    min-width: 130px;
     border-radius: 10px;
     cursor: pointer;
     transition: .3s all; /* Partiall Credit: Nemo Eriksson */
@@ -146,7 +146,7 @@ button:hover{
 }
 
 .done span, .done input{
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 
