@@ -65,23 +65,27 @@ input[type='text']{
     width:450px;
     align-items: center;
     display: block;
-    margin: auto;
     margin-bottom: 10px;
     border-radius: 20px;
     text-align: center;
     font-size: 125%;
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,-50%);
     
 }
 
 input[type='text']:focus{
     border-color: #534c4a;
     box-shadow: 0 0 10px #534c4a;
+    outline: 0;
 }
 
 input[type='checkbox']{
     display: block;
     float: left;
-    margin-left: 10px
+    margin-left: 10px;
 }
 
 input[type='checkbox']:hover{
@@ -97,7 +101,8 @@ input[type='checkbox']:hover{
     margin-bottom: 5px;
     border: solid;
     height: 20px;
-    width: 25%;
+    width: fit-content;
+    min-width: 200px;
     border-radius: 10px;
     cursor: pointer;
 }
