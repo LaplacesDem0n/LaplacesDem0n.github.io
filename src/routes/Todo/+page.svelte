@@ -18,10 +18,6 @@
 
     let todoList = [];
     
-    onMount(()=>{
-        window.localStorage.getItem(JSON.parse('list'));
-    });
-    
     let inputText = '';
 
     function appendToList() {
@@ -33,7 +29,7 @@
         done: false
       } 
     ];
-    window.localStorage.setItem('list', JSON.stringify(todoList));
+
     inputText = '';
 
 }
