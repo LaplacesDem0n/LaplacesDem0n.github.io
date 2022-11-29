@@ -110,6 +110,7 @@ input[type='checkbox']:hover{
     height: 20px;
     width: fit-content;
     height: fit-content;
+    overflow: hidden;
     max-width: 95%;
     min-width: 130px;
     border-radius: 10px;

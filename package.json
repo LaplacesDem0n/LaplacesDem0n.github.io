@@ -8,6 +8,9 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@smui/button": "^7.0.0-beta.0",
+		"@smui/card": "^7.0.0-beta.0",
+		"@smui/icon-button": "^7.0.0-beta.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
