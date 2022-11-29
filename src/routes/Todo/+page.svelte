@@ -16,11 +16,10 @@
 <script>
 
     
-
-    let todoList = JSON.parse(localStorage.getItem('list'));
-
-    if (todoList = null){
-        todoList = []
+    let todoList = [];
+    let value = JSON.parse(localStorage.getItem('list'));
+    if (value !== null){
+        todoList = value;
     }
 
     let inputText = '';
