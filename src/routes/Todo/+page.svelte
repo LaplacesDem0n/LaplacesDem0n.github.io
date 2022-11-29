@@ -19,6 +19,10 @@
 
     let todoList = JSON.parse(localStorage.getItem('list'));
 
+    if (todoList = null){
+        todoList = []
+    }
+
     let inputText = '';
 
     function appendToList() {
