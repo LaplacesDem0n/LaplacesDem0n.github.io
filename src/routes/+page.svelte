@@ -1,110 +1,24 @@
 <script>
 import { onMount } from "svelte";
-import IconButton from '@smui/icon-button';
+/*
+let sections = [
+    'localhost:5173/#clicker',
+    'localhost:5173/#todo'
 
-function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-function writeText(el, text, written, index, delay){
-    setTimeout(()=>{
-        let interval = setInterval(() => {
-            written += text[index];
-            index += 1;
-            el.innerText = written;
-            if(written == text){
-                clearInterval(interval);
-                return;
-            }
-        }, 1200/text.Length);
-    }, delay);
-}
-
+]
 onMount(()=>{
-    let abtTextEl = document.getElementById('aboutText');
-    let infTextEl = document.getElementById('favouriteReads');
-    writeText(abtTextEl, abtTextEl.innerText, '', 0, 1000);
-    writeText(infTextEl, infTextEl.innerText, '', 0, 800);
-    abtTextEl.innerText = '';
-    infTextEl.innerText = '';
-
-    let sections = [
-        document.getElementById('clicker'),
-        document.getElementById('todo'),
-    ]
-    let sectionLinks = [
-        document.getElementById('clickerLink'),
-        document.getElementById('todoLink'),
-    ]
-
-    window.addEventListener('scroll', () => {
-        let scrolled = window.pageYOffset;
-
-        setTimeout(() => {
-            if (scrolled == window.pageYOffset) {
-                if ( scrolled % window.innerHeight >= window.innerHeight / 2) {
-                    window.scrollBy({
-                        left: 0,
-                        top: window.innerHeight - (scrolled % window.innerHeight),
-                        behavior: 'smooth'
-                    })
-                } else {
-
-                    window.scrollBy({
-                        left: 0,
-                        top: -(scrolled%window.innerHeight),
-                        behavior: 'smooth'
-                    })
-                }
-            }
-        }, 100);
-
-        for(let i = 0; i < sections.length; i++){
-            if (isInViewport(sections[i])){
-                sectionLinks[i].style.background = '#e0e0e0';
-                sectionLinks[i].style.color = '#1E2022';
-            }
-            else{
-                sectionLinks[i].style.background = 'none';
-                sectionLinks[i].style.color = '#e0e0e0';
-            }
-        }
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    if (
-        (window.performance.navigation && window.performance.navigation.type === 1) ||
-        window.performance
-        .getEntriesByType('navigation')
-        .map((nav) => nav.type)
-        .includes('reload')
-    ){
-        window.location.href = '/';
+for(let i = 0; i < sections.length; i++){
+    if (window.location.href == (sections[i])){
+        document.getElementById('clickerLink').style.color = white;
     }
-    
-
+}
 });
-
+*/  
 </script>
 
 <head>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Patrick+Hand" />
-    <title>My Projects</title>
+    <title>My Website</title>
 </head>
 
 <body>
@@ -112,65 +26,68 @@ onMount(()=>{
     <nav>
         <a class="navTitle" href="#home">Home</a>
         <a href="#clicker" id="clickerLink">Cookie Clicker</a>
-        <a href="#todo" id="todoLink">ToDo List</a>
-        <!--<IconButton class="material-icons" on:click={() => func} touch
-            >build</IconButton>-->
+        <a href="#todo" id="todoLink">Todo List</a>
     </nav>
 
-    <div id="home">
-        <div class="container">
-            <div class="descriptionBox">
-                <h1 class="centerTitle">• About Me</h1>
-                <p id="aboutText">
-                    I am an all around person who is interested in a lot of different things. I have for example tried my hand with magic,
-                    different sports, and some games. When I take interest in something I am captivated by it but only for a short time.
-                    The only interest that have stayed with me so far are football, programming and videogames, and most of all reading.
+    <div class="container y-scroll y-mandatory">
+        <section id="home">
+            <div class="wrapper">
+                <div class="descriptionBox">
+                    <h1 class="centerTitle">• About Me</h1>
+                    <p id="aboutText">
+                        I am an all around person who is interested in a lot of different things. I have for example tried my hand with magic,
+                        different sports, and some games. When I take interest in something I am captivated by it but only for a short time.
+                        The only interest that have stayed with me so far are football, programming and videogames, and most of all reading.
+                    </p>
+                </div>
+                <div class="descriptionBox">
+                    <h1 class="centerTitle">• Best Books</h1>
+                    <p id="booksText">
+                        1. <a
+                        class='linkText'
+                        href=https://wot.fandom.com/wiki/A_beginning>
+                        Wheel of Time</a>, my favourite series. The world building and character development are out of this world.
+                        <br><br>
+                        2. <a
+                        class='linkText'
+                        href='https://mistborn.fandom.com/wiki/Mistborn_Wiki'>
+                        Mistborn</a>, The power system fits together perfectly and it is the best I have ever seen.
+                        <br><br>
+                        3. <a
+                        class='linkText'
+                        href='https://shatterme.fandom.com/wiki/Shatter_Me_Wiki'>
+                        Shatter me</a>, might have given it higher rating because i finished it recently.
+                         Even so, every character is portrayed perfectly with very good background story and personal growth.
+                    </p>
+                </div>
+            </div>
+            <a class="projectsText" href="#clicker">• Projects •</a>
+        </section>
+        <section id="clicker">
+            <div id="cookieSidebar" class="sidebar">
+                <h1 class='sidebarTitle'>Clicker of Cookies</h1>
+                <p class="sectionDescription">
+                    It's a work in progress. <br/>
+                    <!--Click <a class="linkText" href="/clicker">here</a> to play it.-->
                 </p>
             </div>
-            <div class="descriptionBox">
-                <h1 class="centerTitle">• Best Books</h1>
-                <p id="favouriteReads">
-                    1. <a 
-                    class='descriptionLink' 
-                    href=https://wot.fandom.com/wiki/A_beginning 
-                    target='_blank'
-                    rel='noreferrer'>
-                    Wheel of Time</a>, my favourite series. The world building and character development are out of this world.  
-                    <br><br>
-                    2. Mistborn, The power system fits together perfectly and it is the best I have ever seen. 
-                    <br><br>
-                    3. Throne of Glass, 
+            <a class="projectsText upper" href="#home">• Home •</a>
+            <a class="projectsText" href="#todo">• Todo list •</a>
+        </section>
+        <section id="todo">
+            <div class='parent'>
+            <div class='main'>
+                <h1>Todo List</h1>
+                <p class='sectionDescription'>
+                    My Todo list has a lot of features, every change you do will automatically be saved and ready for the next time you enter.
+                    Every task has a box you can check when you are done and a delete button.
+                    You can try it out <a class="linkText" href="/Todo">here</a>.
                 </p>
             </div>
-        </div>
-        <a class="projectsText" href="#clicker">• Projects •</a>
+            </div>
+            <a class="projectsText upper" href="#clicker">• Clicker •</a>
+        </section>
     </div>
-
-    <section id="clicker">
-        <div id="cookieSidebar" class="sidebar">
-            <h1>Clicker of Cookies</h1>
-            <p class="sectionDescription">
-                It's a work in progress. <br/>
-                <!--Click <a class="linkText" href="/clicker">here</a> to play it.-->
-            </p>
-        </div>
-        <a class="projectsText upper" href="#home">• Home •</a>
-        <a class="projectsText" href="#todo">• Todo list •</a>
-    </section>
-
-    <section id="todo">
-        <div id="todoSidebar" class="sidebar">
-            <h1>Todo list</h1>
-            <p class="sectionDescription">
-                I have put the most effort <br>
-                into my ToDo list, <br>
-                you can click <a class="linkText" href="/Todo">here</a> to try it.
-            </p>
-        </div>
-        <img class="screenshot" alt="Screenshot of the ToDo list" src="/screenie2.png"/>
-        <a class="projectsText upper" href="#clicker">• Clicker •</a>
-        <a class="projectsText" href="#other">• Other Projects •</a>
-    </section>
 
 </body>
 
@@ -187,6 +104,7 @@ onMount(()=>{
     caret-color: transparent;
 }
 
+
 *:hover{
     cursor: default;
 }
@@ -196,18 +114,16 @@ onMount(()=>{
 }
 
 body{
-    height: 200vh;
-    width: 100%;
-    max-width: 100%;
+
+    height: 300vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
-    background: white;
 }
 
 :global(body){
     padding: 0;
-    margin: 0;
-    min-width: 1360px;
+    margin: 0
 }
 
 nav{
@@ -215,10 +131,10 @@ nav{
     top: 0;
     padding: 7px 15px 8px 15px;
     z-index: 10;
-    background: #1E2022;
+    background-color: #53606d;
     color: #e0e0e0;
-    width: 100%;
-    border-bottom: 3px solid #e0e0e0;
+    width: 100vw;
+    border-bottom: 3px solid black;
 }
 
 nav .navTitle, a{
@@ -235,7 +151,7 @@ br::selection{
 }
 
 nav a{
-    color: #e0e0e0;
+    color: #000000;
     text-decoration: none;
     font-size: 18px;
     margin-left: 45px;
@@ -253,32 +169,42 @@ a:hover{
     margin-top: 2px;
     font-size: 22px;
     margin-left: 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid black;
     border-radius: 5px;
 }
 
+.y-mandatory {
+  scroll-snap-type: y mandatory;
+}
+
 section{
+    display: block;
     position: relative;
+    scroll-margin: 10px;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
     height: 100vh;
+    width: 100vw;
+    
+
 }
 
 #home{
-    background: #d0d0d0;
+    background: #ffffff;
     height: 100vh;
 }
 
-.container{
+.wrapper{
     position: relative;
     top: 45%;
     left:10%;
-    margin-right: 270px;
     animation: 2s spawnBox forwards;
 }
 
 .descriptionBox{
     height: 400px;
     width: 400px;
-    background: #8e9395;
+    background: #bbbbbb;
     border-radius: 20px;
     position: absolute;
     top: 55%;
@@ -290,28 +216,33 @@ section{
 }
 
 .descriptionBox:first-of-type{
-    left: 25%;
+    left: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .descriptionBox:last-of-type{
-    left: 75%;
+    left: 60%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .descriptionBox p{
     text-align: center;
-    color: #1E2022;
+    color: #000000;
     position: relative;
     top: 20px;
-    font-size: 18px;
+    font-size: 18px; 
 }
 
 .centerTitle{
     position: relative;
     top: 0px;
+    left: 12%;
     width: 250px;
     text-align: center;
     vertical-align: middle;
-    color: #1E2022;
+    color: #000000;
     font-variant: small-caps;
     animation: .5s spawnText forwards;
     animation-delay: .6s;
@@ -322,7 +253,7 @@ section{
 
 .projectsText{
     position: absolute;
-    bottom: -45px;
+    bottom: -5%;
     left: 50%;
     width: 600px;
     height: 90px;
@@ -331,97 +262,73 @@ section{
     font-size: 23px;
     color: black;
     text-decoration: none;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    padding: 5px;
-    opacity: .9;
+    opacity: .6;
     transition: .25s all;
 }
 
 .projectsText.upper{
-    top: 15px;
+    top: 10%;
     height: 90px;
-    padding-top: 45px;
     border-radius: 0;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
 }
 
 .projectsText:hover{
-    scale: 1.05;
-}
-
-.descriptionLink{
-    font-variant: normal;
-    text-decoration: none;
-    color: #404e4f;
-}
-
-section:nth-of-type(1){
-    background: #dcd7c9;
-}
-section:nth-of-type(2){
-    background: #c9d6df;
-}
-section:last-of-type{
-    background: #333b46;
+    scale: 1.02;
+    opacity: 1;
 }
 
 .linkText{
-    color: white;
+    color: black;
     font-variant: normal;
     text-decoration: none;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid black;
 }
 
-.sidebar{
+#todo{
+    background-image: url(C:\Users\pataxe02\Documents\GitHub\LaplacesDem0n.github.io\src\routes\Todo_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.main{
+    display: inline-block;
     height: 100vh;
-    background: slategray;
-    width: 25%;
+    width: 25vw;
     color: #e0e0e0;
 }
 
-.sidebar h1{
+.parent{
+    height: 100vh;
+    width:100vw;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+}
+
+.main h1{
     position: relative;
-    top: 90px;
-    left: 22px;
+    top: 15%;
+    right: 100%;
     font-variant: small-caps;
+    font-size: 35px;
 }
 
 .sectionDescription{
     position: relative;
-    top: 120px;
-    left: 25px;
-    font-size: 15px;
-}
-
-.screenshot{
-    height: 300px;
-    width: 540px;
-    z-index: 2;
-    position: absolute;
-    left: 55%;
-    top: 22.5%;
-    transform: rotate(6deg);
-    border-radius: 5px;
+    top: 62%;
+    left: 35%;
+    font-size: 17px;
 }
 
 #cookieSidebar{
+    height: 100vh;
     background: #404e4f;
     border-right: 4px solid #a27b5c;
 }
 
-#todoSidebar{
-    background: #52616B;
-    border-right: 4px solid #1E2022;
-    color: #1E2022;
-}
-
-#todoSidebar .linkText{
-    color: #1E2022;
-    border-color: #1E2022;
-}
 
 @keyframes spawnBox{
     from{

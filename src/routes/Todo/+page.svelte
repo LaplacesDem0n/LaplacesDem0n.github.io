@@ -26,8 +26,8 @@
 
     function appendToList() {
         todoList = [
-      ...todoList,
-      {
+            ...todoList,
+            {
         id: Math.random(),
         inputText,
         done: false
