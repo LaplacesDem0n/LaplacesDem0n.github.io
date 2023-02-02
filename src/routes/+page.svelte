@@ -50,15 +50,17 @@ for(let i = 0; i < sections.length; i++){
                         <br><br>
                         2. <a
                         class='linkText'
-                        href='https://mistborn.fandom.com/wiki/Mistborn_Wiki'>
-                        Mistborn</a>, The power system fits together perfectly and it is the best I have ever seen.
-                        <br><br>
+                        href='https://shatterme.fandom.com/wiki/Shatter_Me_Wiki'>
+                        Lord of the Mysteries</a>, Lord of the mysteries might be as good as, if not better, than Wheel of Time. However, 
+                        the story is not yet completed and towards the end when Klein gets stronger i felt that the battles became more abstract and thus not something i could imagine like the earlier fights.
+                        It did redeem itself toqards the very end, and have no flaws. All in all the peak of fiction.
+                         <br><br>
                         3. <a
                         class='linkText'
-                        href='https://shatterme.fandom.com/wiki/Shatter_Me_Wiki'>
-                        Shatter me</a>, might have given it higher rating because i finished it recently.
-                         Even so, every character is portrayed perfectly with very good background story and personal growth.
-                    </p>
+                        href='https://mistborn.fandom.com/wiki/Mistborn_Wiki'>
+                        Mistborn</a>, The power system fits together perfectly and it is one of the best I have ever seen.
+                    </p> 
+                        
                 </div>
             </div>
             <a class="projectsText" href="#clicker">• Projects •</a>
@@ -202,7 +204,7 @@ section{
 }
 
 .descriptionBox{
-    height: 400px;
+    height: 450px;
     width: 400px;
     background: #bbbbbb;
     border-radius: 20px;
