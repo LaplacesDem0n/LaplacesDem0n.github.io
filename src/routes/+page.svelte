@@ -1,19 +1,5 @@
 <script>
-import { onMount } from "svelte";
-/*
-let sections = [
-    'localhost:5173/#clicker',
-    'localhost:5173/#todo'
-
-]
-onMount(()=>{
-for(let i = 0; i < sections.length; i++){
-    if (window.location.href == (sections[i])){
-        document.getElementById('clickerLink').style.color = white;
-    }
-}
-});
-*/  
+import { onMount } from "svelte"; 
 </script>
 
 <head>
