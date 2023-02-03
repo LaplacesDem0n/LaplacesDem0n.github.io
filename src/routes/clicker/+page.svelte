@@ -9,14 +9,15 @@
 </div>
 
 <script>
-var cookies = 0
 let click_multiplier = 1
 
 
 let value = parseInt(localStorage.getItem('cookies'))
-if (value !== null){
-    cookies = value;
+if (value == null || value == NaN){
+    value = 0;
     }
+
+let cookies = value;
 
 function add(){
     cookies += 1;

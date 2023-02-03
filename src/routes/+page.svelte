@@ -83,7 +83,7 @@ for(let i = 0; i < sections.length; i++){
                 <p class='sectionDescription'>
                     My Todo list has a lot of features, every change you do will automatically be saved and ready for the next time you enter.
                     Every task has a box you can check when you are done and a delete button.
-                    You can try it out <a class="linkText" href="/Todo">here</a>.
+                    You can try it out <a class="linkText" href="/todo">here</a>.
                 </p>
             </div>
             </div>
