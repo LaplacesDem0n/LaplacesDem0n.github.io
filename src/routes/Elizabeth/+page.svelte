@@ -20,22 +20,20 @@
   <div class="container">
     <h1>Hello, I am Elizabeth.</h1>
     <div class="scrollable">
-      <!-- TODO: loop over the messages and display them -->
       <article>
         <span>
           {chat[0].text}
         </span>
       </article>
     </div>
-    <form
+    <form onsubmit=""
       method="post"
       use:enhance={({ form, data, action, cancel }) => {
         /* https://kit.svelte.dev/docs/form-actions#progressive-enhancement */
         cancel(); //don't post anything to server
         const text = data.get("text");
         write(text);
-  
-        // TODO: reset the form using form.reset()
+        form.reset();
       }}
     >
       <input type="text" name="text" />

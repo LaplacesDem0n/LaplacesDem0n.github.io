@@ -35,7 +35,7 @@
               card.completed = card.flipped;
             });
             flipcount = 0;
-            flippedcard1 = '';
+            flippedcard1 = '+';
             flippedcard2 = '';
             cards = cards;
           }, 2000);

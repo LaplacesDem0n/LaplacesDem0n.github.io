@@ -1,4 +1,23 @@
+<script>
+    
+    
+import { onMount } from "svelte";
 
+
+let cookies = 0;
+
+
+function add(){
+   cookies ++;
+   localStorage.setItem('cookies', (cookies))
+}
+
+onMount(()=>{
+    cookies = parseInt(localStorage.getItem('cookies')??"0");
+    console.log(cookies)
+})
+
+</script> 
 
 <div class = "top">
     <title>Cookie Clicker</title>
@@ -7,25 +26,6 @@
     </div>
     <h1>{cookies}</h1>
 </div>
-
-<script>
-let click_multiplier = 1
-
-
-let value = parseInt(localStorage.getItem('cookies'))
-if (value == null || value == NaN){
-    value = 0;
-    }
-
-let cookies = value;
-
-function add(){
-    cookies += 1;
-    localStorage.setItem('cookies', cookies)
-}
-
-
-</script>    
 
 <style>
 
@@ -45,7 +45,7 @@ function add(){
 }
 h1{
     display: block;
-    margin-left: 45vw;
+    margin-left: 50vw;
 }
 .cookieClass:active{
     scale: 95%;

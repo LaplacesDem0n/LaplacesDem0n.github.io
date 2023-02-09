@@ -36,7 +36,7 @@ import { onMount } from "svelte";
                         <br><br>
                         2. <a
                         class='linkText'
-                        href='https://shatterme.fandom.com/wiki/Shatter_Me_Wiki'>
+                        href='https://lordofthemysteries.fandom.com/wiki/Klein_Moretti'>
                         Lord of the Mysteries</a>, Lord of the mysteries might be as good as, if not better, than Wheel of Time. However, 
                         the story is not yet completed and towards the end when Klein gets stronger i felt that the battles became more abstract and thus not something i could imagine like the earlier fights.
                         It did redeem itself toqards the very end, and have no flaws. All in all the peak of fiction.
@@ -56,7 +56,7 @@ import { onMount } from "svelte";
                 <h1 class='sidebarTitle'>Clicker of Cookies</h1>
                 <p class="sectionDescription">
                     It's a work in progress. <br/>
-                    <!--Click <a class="linkText" href="/clicker">here</a> to play it.-->
+                    Click <a class="linkText" href="/clicker">here</a> to play it.
                 </p>
             </div>
             <a class="projectsText upper" href="#home">• Home •</a>
@@ -278,9 +278,14 @@ section{
 }
 
 #todo{
-    background-image: url(C:\Users\pataxe02\Documents\GitHub\LaplacesDem0n.github.io\src\routes\Todo_bg.jpg);
+    background-image: url("/Todo_bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+#clicker{
+    background-color: white;
+    background-size: cover;
+
 }
 .main{
     display: inline-block;
@@ -309,12 +314,6 @@ section{
     top: 62%;
     left: 35%;
     font-size: 17px;
-}
-
-#cookieSidebar{
-    height: 100vh;
-    background: #404e4f;
-    border-right: 4px solid #a27b5c;
 }
 
 
