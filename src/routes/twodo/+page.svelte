@@ -1,4 +1,4 @@
-<div class='Top'>
+<div>
     <title>Todo App</title>
     <h1>Todo App</h1>
     <form on:submit|preventDefault={appendToList}>
@@ -12,6 +12,7 @@
     <button on:click={() => remove(element)}>&times;</button>
 </div>
 {/each}
+
 
 <script>
 
@@ -53,11 +54,6 @@ onbeforeunload = function(){
 </script>
 
 <style>
-
-.Top{
-    padding-bottom: 15px;
-    margin-bottom: 10px;
-}
 
 h1{
     text-align: center;
@@ -152,6 +148,5 @@ button:hover{
 .done span, .done input{
     opacity: 0.4;
 }
-
 
 </style>

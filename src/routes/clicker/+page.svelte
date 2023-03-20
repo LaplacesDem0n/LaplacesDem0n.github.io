@@ -14,7 +14,6 @@ function add(){
 
 onMount(()=>{
     cookies = parseInt(localStorage.getItem('cookies')??"0");
-    console.log(cookies)
 })
 
 </script> 
