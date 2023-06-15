@@ -31,19 +31,25 @@ import { onMount } from "svelte";
                     <p id="booksText">
                         1. <a
                         class='linkText'
-                        href=https://wot.fandom.com/wiki/A_beginning>
+                        rel="noreferrer"
+                        href='https://wot.fandom.com/wiki/A_beginning'
+                        target="_blank">
                         Wheel of Time</a>, my favourite series. The world building and character development are out of this world.
                         <br><br>
                         2. <a
                         class='linkText'
-                        href='https://lordofthemysteries.fandom.com/wiki/Klein_Moretti'>
+                        rel="noreferrer"
+                        href='https://lordofthemysteries.fandom.com/wiki/Klein_Moretti'
+                        target="_blank">
                         Lord of the Mysteries</a>, Lord of the mysteries might be as good as, if not better, than Wheel of Time. However, 
                         the story is not yet completed and towards the end when Klein gets stronger i felt that the battles became more abstract and thus not something i could imagine like the earlier fights.
                         It did redeem itself toqards the very end, and have no flaws. All in all the peak of fiction.
                          <br><br>
                         3. <a
                         class='linkText'
-                        href='https://mistborn.fandom.com/wiki/Mistborn_Wiki'>
+                        rel="noreferrer"
+                        href='https://mistborn.fandom.com/wiki/Mistborn_Wiki'
+                        target="_blank">
                         Mistborn</a>, The power system fits together perfectly and it is one of the best I have ever seen.
                     </p> 
                         
@@ -109,10 +115,7 @@ body{
     padding: 0;
 }
 
-:global(body){
-    padding: 0;
-    margin: 0
-}
+
 
 nav{
     position: fixed;

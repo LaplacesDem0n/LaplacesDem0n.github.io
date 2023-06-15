@@ -1,0 +1,37 @@
+---
+title: ProgressReport1
+date: "2023-05-01"
+---
+# Progress Report 1
+Jag håller på att göra en egen hemsida där man kan bland annat spela på slot machis eller singla slant. 
+Jag började med att fråga ChatGPT efter startkod på en slotmachine. Det var en hel del fel med den koden så jag fixade de buggarna.
+Efter att slotmachinen fungerade så började jag på startsidan, till det tog jag layouten från ett gammalt projekt och tog sedan bort allt utom strukturen.
+
+
+
+Till min slotmachine har jag functionen handleSpinClick körs ifall slotmachinen inte redan körs och tömmer då listan med resultat, sen körs själva spin functionen under ett interval.
+Efter det kolllas det ifall någon av platserna i results är likadan som någon av de andra. Om det bara är två likadana ökas score med 10 men om alla är samma får man 100 poäng.
+
+På startsidan har jag dessutom gjort ett nav där man kan trycka på shortcuts för att komma till de tre grenarna av hela sidan. Navet är fixerat över alla grenar av hemsidan.:
+
+```svelte
+
+    <nav>
+        <a class="navTitle" href="/notcasino"><span class="hus"></span>Home</a>
+        <a href="/notcasino/slot" id="clickerLink">SlotMachine</a>
+        <a href="/notcasino/blackjack" id="todoLink">BlackJack</a>
+        <a href="/notcasino/coinflip">CoinFlip</a>
+    </nav>
+
+    nav{
+        position: fixed;
+        top: 0;
+        padding: 7px 15px 8px 15px;
+        z-index: 10;
+        background-color: #53606d;
+        color: #e0e0e0;
+        width: 100vw;
+        border-bottom: 3px solid black;
+
+```
+

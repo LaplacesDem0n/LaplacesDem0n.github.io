@@ -1,19 +1,19 @@
 
 <svelte:head>
-  <link rel="stylesheet" href="/pico.min.css" />
+  <link rel="stylesheet"/>
 
   <style>
-    nav {
-      margin-left: 10%;
-      margin-right: 10%;
+    @media (prefers-color-scheme: dark){
+
     }
   </style>
 </svelte:head>
 
-<main class="container">
+<main class="container"  data-theme="dark">
   <slot />
 </main>
 
 <script>
     import "@picocss/pico/css/pico.min.css";
+    import { text } from "svelte/internal";
 </script>
